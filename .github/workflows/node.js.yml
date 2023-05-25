@@ -13,15 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v3
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.5.1
+
       - run: pnpm ci
       - run: pnpm build --if-present
       - run: pnpm test
