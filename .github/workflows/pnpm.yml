@@ -19,6 +19,6 @@ jobs:
         with:
           version: 8.5.1
 
-      - run: pnpm ci
+      - run: pnpm install
       - run: pnpm build --if-present
       - run: pnpm test
