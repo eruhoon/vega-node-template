@@ -22,6 +22,6 @@ jobs:
         with:
           version: 8.5.1
 
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm build --if-present
       - run: pnpm test
